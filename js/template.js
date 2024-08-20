@@ -53,7 +53,7 @@ navItem.forEach(function (item) {
                 form_DesGeneral();
                 break;
             case "Sala":
-                obj_zona = ["iluminacion", "ventanas", "vidrios", "tubos_cortina", "tomas_electricos", "switches", "televisor", "telefono"];
+                obj_zona = ["plafones", "rosetas", "lamparas_led", "ojos_buey", "ventanas", "vidrios", "tubos_cortina", "tomas_electricos", "switches", "televisor", "telefono"];
                 obj_zona.forEach(nombre => {
                     let objeto;
                     if (nombre == "televisor" || nombre == "telefono") {
@@ -65,7 +65,7 @@ navItem.forEach(function (item) {
                 })
                 break;
             case "Cocina":
-                obj_zona = ["iluminacion", "tomas_electricos", "switches", "ventanas", "vidrios", "tubos_cortina", "barra", "meson", "lava_platos", "gabinete_superior", "gabinete_inferior","gabinete_auxiliar", "campana_extractora", "fogon"]
+                obj_zona = ["plafones", "rosetas", "lamparas_led", "ojos_buey", "tomas_electricos", "switches", "ventanas", "vidrios", "tubos_cortina", "barra", "meson", "lava_platos", "gabinete_superior", "gabinete_inferior","gabinete_auxiliar", "campana_extractora", "fogon"]
                 obj_zona.forEach(nombre => {
                     let objeto;
                     if (nombre == "barra") {
@@ -77,7 +77,7 @@ navItem.forEach(function (item) {
                 })
                 break;
             case "Baño":
-                obj_zona = ["puertas", "iluminacion", "tomas_electricos", "switches", "paredes_bano", "ducha", "cabina", "piso", "sanitario", "espejos", "lava_manos", "ventanas", "vidrios", "repisas", "accesorios"];
+                obj_zona = ["puertas", "plafones", "rosetas", "lamparas_led", "ojos_buey", "tomas_electricos", "switches", "paredes_bano", "ducha", "cabina", "piso", "sanitario", "espejos", "lava_manos", "ventanas", "vidrios", "repisas", "accesorios"];
                 obj_zona.forEach(nombre => {
                     let objeto;
                     objeto = new obj_inventario[nombre]();
@@ -85,7 +85,7 @@ navItem.forEach(function (item) {
                 })
                 break;
             case "Alcoba":
-                obj_zona = ["puertas", "iluminacion", "tomas_electricos", "switches", "ventanas", "vidrios", "tubos_cortina", "puertas_closet", "cajones_closet", "entre_panos"];
+                obj_zona = ["puertas", "plafones", "rosetas", "lamparas_led", "ojos_buey", "tomas_electricos", "switches", "ventanas", "vidrios", "tubos_cortina", "puertas_closet", "cajones_closet", "entre_panos"];
                 obj_zona.forEach(nombre => {
                     let objeto;
                     objeto = new obj_inventario[nombre]();
@@ -93,7 +93,7 @@ navItem.forEach(function (item) {
                 })
                 break;
             case "Patio":
-                obj_zona = ["puertas", "iluminacion", "tomas_electricos", "switches", "ventanas", "vidrios", "lavadero", "lavadora", "reja", "piso", "tendedero", "tejas_transparentes"];
+                obj_zona = ["puertas", "plafones", "rosetas", "lamparas_led", "ojos_buey", "tomas_electricos", "switches", "ventanas", "vidrios", "lavadero", "lavadora", "reja", "piso", "tendedero", "tejas_transparentes"];
                 obj_zona.forEach(nombre => {
                     let objeto;
                     if (nombre == "rejas" || nombre == "tendedero") {
