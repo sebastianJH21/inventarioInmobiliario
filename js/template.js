@@ -166,7 +166,8 @@ function template_object(nom, template_obj) {
                     <legend>Estado Inicial</legend>
                     <aside>
                         <select name="${nom}-estado_inicial" id="${nom}-estado_inicial" style="width:10rem">
-                            <option></option>
+                            <option value="" >Selecionar</option>
+                            <option value="0" selected>Sin Estado</option>
                             <option value="1">Muy Malo</option>
                             <option value="2">Malo</option>
                             <option value="3">Regular</option>
@@ -179,7 +180,8 @@ function template_object(nom, template_obj) {
                     <legend>Estado Final</legend>
                     <aside>
                         <select name="${nom}-estado_final" id="${nom}-estado_final" style="width:10rem">
-                            <option value=""></option>
+                            <option value="">Selecionar</option>
+                            <option value="0" selected>Sin Estado</option>
                             <option value="1">Muy Malo</option>
                             <option value="2">Malo</option>
                             <option value="3">Regular</option>
@@ -191,7 +193,7 @@ function template_object(nom, template_obj) {
             </aside>
             <fieldset class="atributo">
                 <legend>Observaciones</legend>
-                <textarea type="number" name="${nom}-observaciones" id="${nom}-observaciones" rows="3" col="100" maxlength="255"></textarea>
+                <textarea type="text" name="${nom}-observaciones" id="${nom}-observaciones" rows="3" col="100" maxlength="255"></textarea>
             </fieldset>
         </fieldset>
     `
@@ -211,7 +213,7 @@ function template_atributos(object, nom) {
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
-                            <label for="${nom_obj + `-` + nom}_si">Si</label>
+                            <label for="${nom_obj + `-` + nom}_si">Sí</label>
                             <input type="radio" name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}_si" value="1">
                         </aside>
                         <aside>

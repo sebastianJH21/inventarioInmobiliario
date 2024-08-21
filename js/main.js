@@ -381,7 +381,7 @@ function check(check, funcion = 0) {
         if (parent.classList.contains('disabled')) {
             parent.classList.remove('disabled');
             parent.querySelectorAll('input, select').forEach(input => {
-                if (input.name != "switch") {
+                if (input.name != "switch" && !input.name.includes('final')) {
                     input.setAttribute('required', 'true')
                 }
             })
@@ -797,6 +797,9 @@ async function editar(objetos) {
         let i = 0;
         obj.querySelectorAll('input, select, textarea').forEach(function (input) { //Selecionar todos los input del formulario 
             if (input.name != "switch") { //Seleccionar los inputs de cada elemento
+                if(input.name.includes('final') && input.value == ""){
+                        input.value = "0";
+                    }
                 let atributo = input.name.split('-')[1]; // extraer el nombre de cada elemento del objeto
                 if (input.type == "radio") { //separar los input radio
                     if (input.checked) { //validar el radio seleccionado
@@ -958,9 +961,13 @@ function guardar() {
             let i = 0;
             obj.querySelectorAll('input, select, textarea').forEach(function (input) { //Selecionar todos los input del formulario 
                 if (input.name.includes(nombre)) { //Selecionar los inputs de cada elemento
+                    if(input.name.includes('final') && input.value == ""){
+                        input.value = 0;
+                    }
                     let atributo = input.name.split('-')[1]; // extraer el nombre de cada elemento del objeto
                     if (input.type == "radio") { //separar los input radio
                         if (input.checked) { //validad el radio seleccionado
+                            
                             objeto[atributo] = input.value; //extrar el valor y almacenar en el objeto
                             if (!propiedades.includes(atributo)) {
                                 propiedades[i] = atributo;
