@@ -1,6 +1,3 @@
-:root{
-
-}
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +15,10 @@ input, label{
 }
 input[type="radio"], label, select {
     cursor: pointer;
+}
+input[type="color"]{
+    width: 4rem;
+    height: 2.5rem;
 }
 legend {
     pointer-events: none;

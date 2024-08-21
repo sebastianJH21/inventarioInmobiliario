@@ -205,8 +205,9 @@ function template_atributos(object, nom) {
         if (a > 2) { // no tomar los primeros campos de la clase Objetos
             let nombre = element[0].replace(/_/, " "); //nombre para los titulos
             let nom = element[0]; //nombre para utilizar las variables
-            if (element[1] == 1) { //SELECIONAR SI O NO
-                template += `
+            switch (element[1]) {
+                case 1://SELECIONAR SI O NO
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
@@ -218,9 +219,10 @@ function template_atributos(object, nom) {
                             <input type="radio" name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}_no" value="0">
                         </aside>
                     </fieldset>
-                `
-            } else if (element[1] == 2) { // CANTIDAD
-                template += `
+                    `
+                    break;
+                case 2: // CANTIDAD
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
@@ -241,18 +243,20 @@ function template_atributos(object, nom) {
                             </select>
                         </aside>
                     </fieldset>    
-                `
-            } else if (element[1] == 3) { // CAMPO DE TEXTO
-                template += `
+                    `
+                    break;
+                case 3: //CAMPO DE TEXTO
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
-                            <input type="text" name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" maxlength="30">
+                            <input class="input-color" type="color" name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" maxlength="30">
                         </aside>
                     </fieldset>
-                `
-            } else if (element[1] == 4) { //MESON
-                template += `
+                    `
+                    break;
+                case 4: //MESON
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
@@ -261,14 +265,15 @@ function template_atributos(object, nom) {
                                 <option value="1">Acero Inox</option>
                                 <option value="2">Enchapado</option>
                                 <option value="3">Granito</option>
-                                <option value="4">Quarzo</option>
+                                <option value="4">Cuarzo</option>
                                 <option value="5">Resina</option>
                             </select>
                         </aside>
                     </fieldset>    
-                `
-            } else if (element[1] == 5) { // LLAVE DE AGUA
-                template += `
+                    `
+                    break;
+                case 5: //LLAVE DE AGUA
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
@@ -279,9 +284,10 @@ function template_atributos(object, nom) {
                             </select>
                         </aside>
                     </fieldset>    
-                `
-            } else if (element[1] == 6) { //GABINETE
-                template += `
+                    `
+                    break;
+                case 6: //GABINETE
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
@@ -292,47 +298,88 @@ function template_atributos(object, nom) {
                             </select>
                         </aside>
                     </fieldset>    
-                `
-            } else if (element[1] == 7) { // FOGON
-                template += `
+                    `
+                    break;
+                case 7: //FOGON
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
                             <select name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" style="width:10rem">
                                 <option value="">Selecionar</option>
-                                <option value="1">Fogon</option>
+                                <option value="1">Fogón</option>
                                 <option value="2">Estufa</option>
                             </select>
                         </aside>
                     </fieldset>    
-                `
-            } else if (element[1] == 8) { //DUCHA
-                template += `
+                    `
+                    break;
+                case 8: //DUCHA
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
                             <select name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" style="width:10rem">
                                 <option value="">Selecionar</option>
                                 <option value="1">Regadera</option>
-                                <option value="2">Electrica</option>
+                                <option value="2">Eléctrica</option>
                             </select>
                         </aside>
                     </fieldset>    
-                `
-            } else { //CABINA BAÑO
-                template += `
+                    `
+                    break;
+                case 9: //CABINA BAÑO
+                    template += `
                     <fieldset class="atributo">
                         <legend>${nombre}</legend>
                         <aside>
                             <select name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" style="width:10rem">
                                 <option value="">Selecionar</option>
-                                <option value="1">Acrilico</option>
+                                <option value="1">Acrílico</option>
                                 <option value="2">Vidrio Templado</option>
                                 <option value="3">Cortina</option>
                             </select>
                         </aside>
                     </fieldset>    
-                `
+                    `
+                    break;
+                case 10: //TIPOS DE SUELOS
+                    template += `
+                    <fieldset class="atributo">
+                        <legend>${nombre}</legend>
+                        <aside>
+                            <select name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" style="width:10rem">
+                                <option value="">Selecionar</option>
+                                <option value="1">Baldosa</option>
+                                <option value="2">Cerámica</option>
+                                <option value="3">Cemento</option>
+                                <option value="4">Rustico</option>
+                                <option value="5">Madera</option>
+                                <option value="6">Vinilo</option>
+                                <option value="7">Piedra de Rio</option>
+                            </select>
+                        </aside>
+                    </fieldset>    
+                    `
+                    break;
+                case 11: //MARCA CAMPANA EXTRACTORA
+                    template += `
+                    <fieldset class="atributo">
+                        <legend>${nombre}</legend>
+                        <aside>
+                            <select name="${nom_obj + `-` + nom}" id="${nom_obj + `-` + nom}" style="width:10rem">
+                                <option value="">Selecionar</option>
+                                <option value="1">Challenger</option>
+                                <option value="2">Haceb</option>
+                                <option value="3">Mabe</option>
+                                <option value="4">Indurama</option>
+                                <option value="5">Teka</option>
+                                <option value="6">Frigidaire</option>
+                            </select>
+                        </aside>
+                    </fieldset>    
+                    `
+                    break;
             }
         }
         a++;

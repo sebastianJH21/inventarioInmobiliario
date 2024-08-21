@@ -56,8 +56,8 @@ class paredes extends objetos {
 class suelo extends objetos {
     constructor(tipo, zocalo, estado_inicial, estado_final, observaciones) {
         super(estado_inicial, estado_final, observaciones);
-        this.tipo = 3;
-        this.zocalo = 3;
+        this.tipo = 10;
+        this.zocalo = 10;
     }
 }
 class iluminacion extends objetos {
@@ -124,7 +124,7 @@ class gabinete extends objetos {
 class campana_extractora extends objetos {
     constructor(marca, estado_inicial, estado_final, observaciones) {
         super(estado_inicial, estado_final, observaciones);
-        this.marca = 3;
+        this.marca = 11;
     }
 }
 class fogon extends objetos {
@@ -166,7 +166,7 @@ class cabina extends objetos {
 class piso extends objetos {
     constructor(tipo, rejilla, estado_inicial, estado_final, observaciones) {
         super(estado_inicial, estado_final, observaciones);
-        this.tipo = 3;
+        this.tipo = 10;
         this.rejilla = 1;
     }
 }
