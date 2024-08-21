@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2024 at 12:22 AM
+-- Generation Time: Aug 21, 2024 at 10:58 PM
 -- Server version: 8.0.36
 -- PHP Version: 8.2.12
 
@@ -198,7 +198,7 @@ CREATE TABLE `campana_extractora` (
 --
 
 INSERT INTO `campana_extractora` (`id`, `id_inventario`, `id_zona`, `marca`, `estado_inicial`, `estado_final`, `observaciones`) VALUES
-(1, 1, 3, 'hacer', 5, 5, 'engrasada con vidrio'),
+(1, 1, 3, '4', 5, 5, 'engrasada con vidrio'),
 (2, 2, 3, 'hacer', 5, 5, '');
 
 -- --------------------------------------------------------
@@ -644,7 +644,7 @@ CREATE TABLE `paredes` (
 --
 
 INSERT INTO `paredes` (`id`, `id_inventario`, `id_zona`, `color`, `estado_inicial`, `estado_final`, `observaciones`) VALUES
-(3, 1, 1, 'Blancas', 4, 5, 'Sin perforaciones');
+(3, 1, 1, '#d31d1d', 4, 5, 'Sin perforaciones');
 
 -- --------------------------------------------------------
 
@@ -683,23 +683,12 @@ CREATE TABLE `piso` (
   `id` int NOT NULL,
   `id_inventario` int NOT NULL,
   `id_zona` int NOT NULL,
-  `tipo` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `tipo` int NOT NULL,
   `rejilla` int DEFAULT NULL,
   `estado_inicial` int NOT NULL,
   `estado_final` int NOT NULL,
   `observaciones` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `piso`
---
-
-INSERT INTO `piso` (`id`, `id_inventario`, `id_zona`, `tipo`, `rejilla`, `estado_inicial`, `estado_final`, `observaciones`) VALUES
-(1, 1, 4, 'en baldosa', 1, 4, 5, 'sin fugas'),
-(2, 1, 6, 'baldosa', 1, 5, 5, ''),
-(3, 2, 4, 'baldosa', 1, 4, 4, ''),
-(4, 2, 4, 'azul', 1, 3, 4, ''),
-(5, 2, 4, 'baldosa', 0, 3, 4, '');
 
 -- --------------------------------------------------------
 
@@ -931,19 +920,12 @@ CREATE TABLE `suelo` (
   `id` int NOT NULL,
   `id_inventario` int NOT NULL,
   `id_zona` int NOT NULL,
-  `tipo` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `zocalo` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tipo` int NOT NULL,
+  `zocalo` int NOT NULL,
   `estado_inicial` int NOT NULL,
   `estado_final` int NOT NULL,
   `observaciones` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `suelo`
---
-
-INSERT INTO `suelo` (`id`, `id_inventario`, `id_zona`, `tipo`, `zocalo`, `estado_inicial`, `estado_final`, `observaciones`) VALUES
-(22, 1, 1, 'baldosa', 'madera', 5, 5, 'macha en la sala');
 
 -- --------------------------------------------------------
 
@@ -1151,7 +1133,8 @@ INSERT INTO `tubos_cortina` (`id`, `id_inventario`, `id_zona`, `cantidad`, `sopo
 (8, 2, 3, 1, 1, 0, 4, 4, ''),
 (9, 2, 5, 2, 3, 3, 4, 3, ''),
 (10, 2, 5, 3, 3, 3, 3, 4, ''),
-(11, 2, 5, 4, 4, 4, 5, 5, '');
+(11, 2, 5, 4, 4, 4, 5, 5, ''),
+(12, 1, 3, 1, 2, 1, 2, 3, '');
 
 -- --------------------------------------------------------
 
@@ -1879,7 +1862,7 @@ ALTER TABLE `tomas_electricos`
 -- AUTO_INCREMENT for table `tubos_cortina`
 --
 ALTER TABLE `tubos_cortina`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `ventanas`
